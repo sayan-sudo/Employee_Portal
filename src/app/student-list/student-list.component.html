@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1 style="text-align: center">Students</h1><br>
+      <div class="row" [hidden]="!deleteMessage">
+           
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                      
+                </div>
+                <div class="col-sm-4"></div>
+        </div>           
+    </div>
+
+  
+  <div class="panel-body">
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"  >
+          <thead class="thead-light">
+              <tr>
+                  <th>Student First Name</th>
+                  <th>Student Last Name</th>
+                  <th>Student Gender</th>
+                  <th>Student DOB</th>
+                  <th>Student Department</th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+               <tr *ngFor="let student of students ">
+                  <td>{{student.firstName}}</td>
+                  <td>{{student.lastName}}</td>
+                  <td>{{student.gender}}</td>
+                  <td>{{student.dob}}</td>
+                  <td>{{student.dept}}</td>
+                  
+                </tr> 
+          </tbody><br>
+      </table>
+  </div>
+</div> 
+

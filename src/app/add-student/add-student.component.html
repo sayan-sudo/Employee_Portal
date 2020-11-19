@@ -1,0 +1,93 @@
+<h3>Create Student</h3>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" >
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="studentsaveform" #savestudent (ngSubmit)="saveStudent(saveStudent)">
+          <div class="form-group">
+              <label for="name">Student First Name</label>
+              <input type="text" class="form-control"  formControlName="firstName" data-toggle="tooltip" 
+                 data-placement="right" title="Enter Student First Name" >
+              <div class="alert alert-danger" *ngIf = "(StudentFirstName.touched) && (StudentFirstName.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="StudentFirstName.errors.required">Student Name is Required</span>
+                    <span *ngIf = "StudentFirstName.errors.minlength"> 
+                        MinLength Error 
+                    </span>                   
+                </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Student First Name</label>
+            <input type="text" class="form-control"  formControlName="lastName" data-toggle="tooltip" 
+               data-placement="right" title="Enter Student First Name" >
+            <div class="alert alert-danger" *ngIf = "(StudentLastName.touched) && (StudentLastName.invalid)" 
+              style="margin-top: 5px;">
+                <span *ngIf="StudentLastName.errors.required">Student Last Name is Required</span>
+                  <span *ngIf = "StudentLastName.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="name">Gender</label>
+          <input type="text" class="form-control"  formControlName="lastName" data-toggle="tooltip" 
+             data-placement="right" title="Enter Gender" >
+          <div class="alert alert-danger" *ngIf = "(StudentGender.touched) && (StudentGender.invalid)" 
+            style="margin-top: 5px;">
+              <span *ngIf="StudentGender.errors.required">Student Gender is Required</span>
+                <span *ngIf = "StudentGender.errors.minlength"> 
+                    MinLength Error 
+                </span>                   
+            </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">DOB</label>
+        <input type="text" class="form-control"  formControlName="dob" data-toggle="tooltip" 
+           data-placement="right" title="Enter Gender" >
+        <div class="alert alert-danger" *ngIf = "(StudentDOB.touched) && (StudentDOB.invalid)" 
+          style="margin-top: 5px;">
+            <span *ngIf="StudentDOB.errors.required">Student DOB is Required</span>
+              <span *ngIf = "StudentDOB.errors.minlength"> 
+                  MinLength Error 
+              </span>                   
+          </div>
+    </div>
+
+      
+
+
+  
+          <div class="form-group">
+              <label for="name">Student Department</label>
+              <input type="text" class="form-control" formControlName="student_email" 
+                data-toggle="tooltip" data-placement="right" title="Enter Student Email">
+                <div class="alert alert-danger" *ngIf = "(StudentDept.touched) && (StudentDept.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="StudentDept.errors.required">Student Department is Required</span>
+                                    
+                </div>
+          </div>
+  
+  
+          <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+  </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div [hidden]="!submitted">
+         <h4>Student Added SuccessFully!</h4>
+         <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>
+      </div>      
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+
