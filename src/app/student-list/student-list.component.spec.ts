@@ -14,6 +14,7 @@ describe('StudentListComponent', () => {
   }));
 
   beforeEach(() => {
+    console.log();
     fixture = TestBed.createComponent(StudentListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
