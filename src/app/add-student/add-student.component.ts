@@ -41,6 +41,7 @@ export class AddStudentComponent implements OnInit {
   
 
   save() {
+    console.log(this.student);
     this.studentservice.createStudent(this.student)
       .subscribe(data => console.log(data), error => console.log(error));
     this.student = new Student();
